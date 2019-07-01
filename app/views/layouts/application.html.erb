@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectDeliver</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>ProjectDeliver</title>
+
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
-  <body>
+  <body class="<%= body_class %>">
+    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>

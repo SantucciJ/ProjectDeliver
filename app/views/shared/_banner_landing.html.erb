@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+<% else %>
+<div class="banner-landing" style="background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1500,w_2000,f_auto,q_auto/v1/1441878/saloon_HD_rv7ekk.jpg');">
+
+  <div class="banner-content">
+    <div class="typed">
+      <h1 id="banner-landing"> </h1>
+    </div>
+    <div class="sign">
+      <%= link_to "Je m'inscris", new_user_registration_path, class:"btn btn-primary btn-lg" %>
+    </div>
+  </div>
+</div>
+<% end %>
