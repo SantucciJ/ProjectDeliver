@@ -10,6 +10,8 @@ gem 'devise'
 
 gem 'rails_admin'
 
+gem 'bootstrap', '~> 4.1.3'
+
 gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

@@ -1,0 +1,22 @@
+.sign-up {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.sign-up-back {
+  background-color: rgba(255, 215, 0, 0.9 );
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  a {
+    color: #033E89;
+  }
+}
+
+.bg-sign {
+  background-image: url('https://images.unsplash.com/photo-1526367790999-0150786686a2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&dl=kai-pilger-tL92LY152Sk-unsplash.jpg');
+  background-size: cover !important;
+  height: calc(100vh - 70px);
+  background-position: center;
+}

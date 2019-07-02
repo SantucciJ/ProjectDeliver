@@ -1,10 +1,9 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_restaurants, only: [:show]
+  before_action :set_restaurants, only: [:show, :create]
 
   def index
     @restaurants = Restaurant.all
-    @restaurant = Restaurant.new
   end
 
   def show
@@ -18,7 +17,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    if user.admin
+      @restaurant = Restaurant.new(params_restaurant)
+      @restaurant.save
+      redirect_to restaurants_path
+    end
   end
 
   def update
