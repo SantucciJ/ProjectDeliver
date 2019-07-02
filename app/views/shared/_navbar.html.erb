@@ -1,47 +1,34 @@
 <% if user_signed_in? %>
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">DELIVER</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Restaurants <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mon Historique</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mes crédits</a>
-        </li>
-        <button class=" btn btn-outline-danger my-2 my-sm-0" type="submit"><%= link_to "Déconnecté", restaurants_path, method: :delete%></button>
-      </ul>
-    </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Our Logo</a>
+    <form class="form-inline">
+      <div style="padding-right: 50px;">
+        <a class="navbar-brand nav-link mr-sm-2" href="#" style="font-size: 20px;">
+        orders
+        </a>
+      </div>
+      <a class="btn btn-outline-danger" href="<% link_to destroy_user_session_path, :method => :delete %>" role="button">
+        Logout
+      </a>
+    </form>
   </nav>
 
 
   <% else %>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">DELIVER</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Restaurants <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mon Historique</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mes crédits</a>
-          </li>
-          <button class=" btn btn-outline-info my-2 my-sm-0" type="submit"><%= link_to "Connexion", destroy_user_session_path, method: "delete"%></button>
-        </ul>
-      </div>
+
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Our Logo</a>
+      <form class="form-inline">
+        <a class="btn btn-outline-primary" href="/users/sign_in" role="button">
+        Login
+        </a>
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="/users/sign_up" role="button">
+          Sign Up
+          </a>
+        </div>
+      </form>
     </nav>
 
 

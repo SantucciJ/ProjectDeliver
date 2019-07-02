@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_065052) do
+ActiveRecord::Schema.define(version: 2019_07_02_130829) do
 
-  create_table "menus", force: :cascade do |t|
+  create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "image"

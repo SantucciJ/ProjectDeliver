@@ -1,19 +1,6 @@
+<h1 class="pagination justify-content-center">Restaurants</h1>
 <div class="row">
-  <h1 class="padding-left">Les Restaurants</h1>
-  <% @restaurants.each do |restaurant| %>
-    <% link_to restaurant_path(restaurant) do %>
-
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="width: 30rem; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.image %>'); ">
-          <img class="card-img-top">
-          <div class="card-header"><%= restaurant.name %></div>
-          <div class="card-body">
-            <p class="card-text"><%= restaurant.description %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render @restaurants %>
 </div>
 
 
