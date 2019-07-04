@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  #before action :set_menu, only: [:show, :destroy]
+  #before action :set_dishes, only: [:show]
 
   def index
     @dishes = Dish.all
@@ -10,7 +10,11 @@ class DishesController < ApplicationController
   end
 
   def create
-    @dish = Dish.new(dish_params)
+    if user.admin
+      @dish = Dish.new(dish_params)
+      @dish.save
+      redirect to restaurant_path
+    end
   end
 
   def update
@@ -20,7 +24,8 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @dish = Dish.find(params[:id])
+    @dish = Di
+    @dish.find(params[:id])
     @dish.destroy
   end
 
@@ -30,7 +35,7 @@ class DishesController < ApplicationController
     @dish = Dish.find(params[:id])
   end
 
-  def menu_params
+  def dish_params
     params.require(:dish).permit(:title, :description, :price)
   end
 end
