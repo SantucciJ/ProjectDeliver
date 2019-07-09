@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  #before action :set_dishes, only: [:show]
+  before_action :set_dishes, only: [:index]
 
   def index
     @dishes = Dish.all
@@ -24,18 +24,21 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @dish = Di
-    @dish.find(params[:id])
+    @dish = Dish.find(params[:id])
     @dish.destroy
   end
 
   private
+
+  def set_restaurants
+    @restaurant = Restaurant.find(params[:id])
+  end
 
   def set_dishes
     @dish = Dish.find(params[:id])
   end
 
   def dish_params
-    params.require(:dish).permit(:title, :description, :price)
+    params.require(:dish).permit(:name, :description, :price)
   end
 end

@@ -1,4 +1,9 @@
-<h1 class="pagination justify-content-center">Restaurants</h1>
-<div class="row">
-  <%= render @dishes %>
+<div class="col-xs-12 col-sm-4">
+  <div class="card" style="width: 30rem; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+     <img class="card-img-top">
+    <div class="card-body">
+      <p class="card-text"><%= @restaurant.dishes.description %></p>
+    </div>
+    <div class="card-footer"><%= @restaurant.dishes.name %></div>
+  </div>
 </div>
