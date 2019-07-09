@@ -27,9 +27,22 @@ Restaurant.destroy_all
   name = Faker::Company.name
   description = Faker::Company.catch_phrase
   image = 'https://via.placeholder.com/200x90.jpg?text=' + name
-  Restaurant.create!(
+  restaurant = Restaurant.create!(
     name:  name,
     description: description,
     image: image
   )
+
+  10.times do
+    Dish.create!(
+      name: Faker::Creature::Dog.name,
+      description: Faker::Creature::Dog.meme_phrase,
+      image: 'https://via.placeholder.com/200x90.jpg?text=' + Faker::Creature::Dog.name,
+      price: Faker::Number.between(50, 200),
+      restaurant_id: restaurant.id  
+    )
+  end
+
+
 end
+
